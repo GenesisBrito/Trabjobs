@@ -1,0 +1,104 @@
+﻿
++
+@{
+    ViewData["Title"] = "Buscar";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Página de Búsqueda de Trabajo</title>
+    <style>
+        /* Estilos CSS para el encabezado y el contenido de la página */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+
+        /* Estilos CSS para el formulario de búsqueda */
+        .search-form {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .search-input {
+            width: 400px;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        .search-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* Estilos CSS para los resultados de búsqueda */
+        .job-listing {
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            background-color: #f2f2f2;
+        }
+
+        .job-title {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .job-description {
+            margin-bottom: 10px;
+        }
+
+        .job-location {
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Búsqueda de Trabajo</h1>
+    </header>
+    <div class="container">
+        <div class="search-form">
+            <form action="/buscar" method="GET">
+                <input type="text" name="query" class="search-input" placeholder="Buscar empleos...">
+                <button type="submit" class="search-button">Buscar</button>
+            </form>
+        </div>
+        <div class="job-listing">
+            <h2 class="job-title">Desarrollador Web</h2>
+            <p class="job-description">Buscamos un desarrollador web con experiencia en HTML, CSS y JavaScript.</p>
+            <p class="job-location">Ubicación: Ciudad X</p>
+        </div>
+        <div class="job-listing">
+            <h2 class="job-title">Diseñador Gráfico</h2>
+            <p class="job-description">Estamos en busca de un diseñador gráfico creativo y talentoso.</p>
+            <p class="job-location">Ubicación: Ciudad Y</p>
+        </div>
+        <!-- Agrega más listados de empleos aquí -->
+    </div>
+</body>
+</html>
+

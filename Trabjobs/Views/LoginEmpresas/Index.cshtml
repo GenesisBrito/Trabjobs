@@ -1,0 +1,97 @@
+﻿@model IEnumerable<Trabjobs.Models.LoginEmpresa>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    header {
+        background-color: #333;
+        color: #fff;
+        padding: 10px;
+        text-align: center;
+    }
+
+    h1 {
+        margin: 0;
+        font-size: 24px;
+    }
+
+    nav {
+        background-color: #f4f4f4;
+        padding: 10px;
+    }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+            nav ul li {
+                display: inline;
+                margin-right: 10px;
+            }
+
+                nav ul li a {
+                    color: #333;
+                    text-decoration: none;
+                }
+
+    section {
+        padding: 20px;
+    }
+
+    footer {
+        background-color: #333;
+        color: #fff;
+        padding: 10px;
+        text-align: center;
+    }
+</style>
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CorreoEmpresa)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ContraseñaEmpresa)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Empresa)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CorreoEmpresa)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ContraseñaEmpresa)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Empresa.IdEmpresa)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

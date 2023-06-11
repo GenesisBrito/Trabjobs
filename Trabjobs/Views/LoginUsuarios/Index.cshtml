@@ -1,0 +1,41 @@
+﻿@model IEnumerable<Trabjobs.Models.LoginUsuario>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a class="btn btn-primary" asp-action="Create">Create New</a>
+</p>
+
+<div class="table-responsive">
+    <table class="table table-striped">
+        <thead class="thead-dark">
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.CorreoUsuarios)</th>
+                <th>@Html.DisplayNameFor(model => model.ContraseñaUsuarios)</th>
+                <th>@Html.DisplayNameFor(model => model.Usuario)</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.CorreoUsuarios)</td>
+                    <td>@Html.DisplayFor(modelItem => item.ContraseñaUsuarios)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Usuario.IdUsuario)</td>
+                    <td>
+                        <div class="btn-group" role="group" aria-label="Acciones">
+                            <a class="btn btn-primary" asp-action="Edit" asp-route-id="@item.Id">Editar</a>
+                            <a class="btn btn-info" asp-action="Details" asp-route-id="@item.Id">Detalles</a>
+                            <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id">Eliminar</a>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

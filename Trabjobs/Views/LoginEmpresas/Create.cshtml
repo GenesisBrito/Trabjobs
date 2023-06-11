@@ -1,0 +1,69 @@
+﻿@model Trabjobs.Models.LoginEmpresa
+
+@{
+    ViewData["Title"] = "INICIO DE SESION DE EMPRESAS";
+}
+
+<h1 class="text-center">INICIA SESION CON TU EMPRESA</h1>
+
+<div class="card login-card">
+    <div class="card-body">
+        <h4 class="card-title text-center"></h4>
+        <hr />
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <form asp-action="Create" class="login-form">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="CorreoEmpresa" class="control-label">Correo</label>
+                        <input asp-for="CorreoEmpresa" class="form-control" />
+                        <span asp-validation-for="CorreoEmpresa" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="ContraseñaEmpresa" class="control-label">Contraseña</label>
+                        <input asp-for="ContraseñaEmpresa" class="form-control" />
+                        <span asp-validation-for="ContraseñaEmpresa" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="EmpresaId" class="control-label">Empresa</label>
+                        <select asp-for="EmpresaId" class="form-control" asp-items="ViewBag.EmpresaId"></select>
+                    </div>
+                    <div class="form-group text-center">
+                        <input type="submit" value="Create" class="btn btn-primary btn-login" />
+                    </div>
+                    <br />
+                    <div class="text-center">
+                        <a href="\Empleos\Create" class="btn btn-primary">Registrar Empleos</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .login-card {
+        background-color: #f2f2f2;
+        border: 1px solid #ccc;
+        padding: 20px;
+        border-radius: 5px;
+    }
+
+        .login-card .card-title {
+            margin-bottom: 20px;
+        }
+
+    .login-form .form-group {
+        margin-bottom: 20px;
+    }
+
+    .login-form .btn-login {
+        width: 100%;
+    }
+</style>
+
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

@@ -1,0 +1,81 @@
+﻿@model Trabjobs.Models.LoginUsuario
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="registration-box">
+    <h1>INICIA SESION</h1>
+    <form method="post" class="form-floating">
+        <div class="form-group">
+            <label asp-for="CorreoUsuarios" class="control-label">Correo electrónico</label>
+            <input asp-for="CorreoUsuarios" class="form-control" placeholder="Ingresa tu correo electrónico" />
+            <span asp-validation-for="CorreoUsuarios" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="ContraseñaUsuarios" class="control-label">Contraseña</label>
+            <input asp-for="ContraseñaUsuarios" class="form-control" placeholder="Ingresa tu contraseña" />
+            <span asp-validation-for="ContraseñaUsuarios" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="UsuarioId" class="control-label">Tipo de usuario</label>
+            <select asp-for="UsuarioId" class="form-control" asp-items="ViewBag.UsuarioId">
+            </select>
+        </div>
+        <div class="form-group text-center">
+            <button type="submit" class="btn btn-primary">INGRESAR</button>
+        </div>
+    </form>
+</div>
+
+<style>
+    .registration-box {
+        background-color: #f2f2f2;
+        border: 1px solid #ccc;
+        padding: 20px;
+        width: 400px;
+        margin: 0 auto;
+        border-radius: 5px;
+    }
+
+        .registration-box h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    .form-control {
+        border-radius: 3px;
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+        border-color: #007bff;
+        color: #fff;
+        padding: 8px 20px;
+        font-size: 16px;
+    }
+
+        .btn-primary:hover {
+            background-color: #0069d9;
+            border-color: #0062cc;
+        }
+
+    .text-danger {
+        color: #dc3545;
+    }
+</style>
+
+
+
+<div>
+    <a asp-action="Details"></a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

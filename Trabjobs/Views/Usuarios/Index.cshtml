@@ -1,0 +1,72 @@
+﻿@model IEnumerable<Trabjobs.Models.Usuario>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Tabla de Registros</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Crear</a>
+</p>
+
+<table class="table table-striped table-bordered">
+    <thead class="thead-dark">
+        <tr>
+            <th class="text-center">
+                <span class="table-header">Nombre</span>
+            </th>
+            <th class="text-center">
+                <span class="table-header">Apellido</span>
+            </th>
+            <th class="text-center">
+                <span class="table-header">Correo</span>
+            </th>
+            <th class="text-center">
+                <span class="table-header">Contraseña</span>
+            </th>
+            <th class="text-center">
+                <span class="table-header">Teléfono</span>
+            </th>
+            <th class="text-center">
+                <span class="table-header">Rol</span>
+            </th>
+            <th class="text-center">
+                <span class="table-header">Acciones</span>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td class="text-center">
+                    @Html.DisplayFor(modelItem => item.NombreUsuarios)
+                </td>
+                <td class="text-center">
+                    @Html.DisplayFor(modelItem => item.ApellidoUsuarios)
+                </td>
+                <td class="text-center">
+                    @Html.DisplayFor(modelItem => item.CorreoUsuarios)
+                </td>
+                <td class="text-center">
+                    @Html.DisplayFor(modelItem => item.ContraseñaUsuarios)
+                </td>
+                <td class="text-center">
+                    @Html.DisplayFor(modelItem => item.TelefonoUsuarios)
+                </td>
+                <td class="text-center">
+                    @Html.DisplayFor(modelItem => item.RolUsuario.IdRolesUsuario)
+                </td>
+                <td class="text-center">
+                    <div class="btn-group" role="group" aria-label="User Actions">
+                        <a asp-action="Edit" asp-route-id="@item.IdUsuario" class="btn btn-primary">Edit</a>
+                        <a asp-action="Details" asp-route-id="@item.IdUsuario" class="btn btn-secondary">Details</a>
+                        <a asp-action="Delete" asp-route-id="@item.IdUsuario" class="btn btn-danger">Delete</a>
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

@@ -1,0 +1,59 @@
+﻿@model Trabjobs.Models.Usuario
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Usuario</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="IdUsuario" />
+            <div class="form-group">
+                <label asp-for="NombreUsuarios" class="control-label"></label>
+                <input asp-for="NombreUsuarios" class="form-control" />
+                <span asp-validation-for="NombreUsuarios" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ApellidoUsuarios" class="control-label"></label>
+                <input asp-for="ApellidoUsuarios" class="form-control" />
+                <span asp-validation-for="ApellidoUsuarios" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CorreoUsuarios" class="control-label"></label>
+                <input asp-for="CorreoUsuarios" class="form-control" />
+                <span asp-validation-for="CorreoUsuarios" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ContraseñaUsuarios" class="control-label"></label>
+                <input asp-for="ContraseñaUsuarios" class="form-control" />
+                <span asp-validation-for="ContraseñaUsuarios" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TelefonoUsuarios" class="control-label"></label>
+                <input asp-for="TelefonoUsuarios" class="form-control" />
+                <span asp-validation-for="TelefonoUsuarios" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RolUsuarioId" class="control-label"></label>
+                <select asp-for="RolUsuarioId" class="form-control" asp-items="ViewBag.RolUsuarioId"></select>
+                <span asp-validation-for="RolUsuarioId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

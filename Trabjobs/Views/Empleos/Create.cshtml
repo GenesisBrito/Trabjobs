@@ -1,0 +1,79 @@
+﻿@model Trabjobs.Models.Empleo
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1 class="text-center">Create</h1>
+
+<div class="card job-card">
+    <div class="card-body">
+        <h4 class="card-title text-center">Empleo</h4>
+        <hr />
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <form asp-action="Create" class="job-form">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="TituloEmpleo" class="control-label">Título del Empleo</label>
+                        <input asp-for="TituloEmpleo" class="form-control" />
+                        <span asp-validation-for="TituloEmpleo" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="DescripcionEmpleo" class="control-label">Descripción del Empleo</label>
+                        <input asp-for="DescripcionEmpleo" class="form-control" />
+                        <span asp-validation-for="DescripcionEmpleo" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="UbicacionEmpleo" class="control-label">Ubicación del Empleo</label>
+                        <input asp-for="UbicacionEmpleo" class="form-control" />
+                        <span asp-validation-for="UbicacionEmpleo" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="SalarioEmpleo" class="control-label">Salario del Empleo</label>
+                        <input asp-for="SalarioEmpleo" class="form-control" />
+                        <span asp-validation-for="SalarioEmpleo" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="FechaPublicacion" class="control-label">Fecha de Publicación</label>
+                        <input asp-for="FechaPublicacion" class="form-control" />
+                        <span asp-validation-for="FechaPublicacion" class="text-danger"></span>
+                    </div>
+                    <div class="form-group text-center">
+                        <input type="submit" value="Create" class="btn btn-primary btn-job" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .job-card {
+        background-color: #f9f9f9;
+        border: 1px solid #ccc;
+        padding: 20px;
+        border-radius: 5px;
+    }
+
+        .job-card .card-title {
+            margin-bottom: 20px;
+        }
+
+    .job-form .form-group {
+        margin-bottom: 20px;
+    }
+
+    .job-form .btn-job {
+        width: 100%;
+    }
+</style>
+
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

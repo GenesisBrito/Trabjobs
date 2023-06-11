@@ -1,0 +1,75 @@
+﻿@model Trabjobs.Models.Usuario
+
+@{
+    ViewData["Title"] = "Registros de Usuarios";
+}
+
+<div class="registration-box">
+    <h1>¡Únete a nuestra plataforma!</h1>
+    <br />
+    <form method="post" class="form-floating">
+        <div class="form-group">
+            <label for="NombreUsuarios">Nombres</label>
+            <input type="text" class="form-control" id="NombreUsuarios" name="NombreUsuarios" asp-for="NombreUsuarios" placeholder="Ingrese sus Nombres" />
+        </div>
+        <div class="form-group">
+            <label for="ApellidoUsuarios">Apellidos</label>
+            <input type="text" class="form-control" id="ApellidoUsuarios" name="ApellidoUsuarios" asp-for="ApellidoUsuarios" placeholder="Ingrese sus Apellidos" />
+        </div>
+        <div class="form-group">
+            <label for="CorreoUsuarios">Correo</label>
+            <input type="email" class="form-control" id="CorreoUsuarios" name="CorreoUsuarios" asp-for="CorreoUsuarios" />
+        </div>
+        <div class="form-group">
+            <label for="ContraseñaUsuarios">Contraseña</label>
+            <input type="password" class="form-control" id="ContraseñaUsuarios" name="ContraseñaUsuarios" asp-for="ContraseñaUsuarios" />
+        </div>
+        <div class="form-group">
+            <label for="TelefonoUsuarios">Teléfono</label>
+            <input type="text" class="form-control" id="TelefonoUsuarios" name="TelefonoUsuarios" asp-for="TelefonoUsuarios" />
+        </div>
+        <br />
+        <div class="text-center">
+            <button type="submit" class="btn btn-primary">REGISTRAR</button>
+        </div>
+    </form>
+        <br>
+    <div class="text-center">
+    <a href="\LoginUsuarios\Create" class="btn btn-primary">INGRESAR</a>
+    </div>
+    <br/>
+</div>
+
+<style>
+    .registration-box {
+        background-color: #f2f2f2;
+        border: 1px solid #ccc;
+        padding: 20px;
+        width: 400px;
+        margin: 0 auto;
+        border-radius: 5px;
+    }
+
+    .registration-box h1 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .registration-box .form-group {
+        margin-bottom: 15px;
+    }
+
+    .registration-box .text-center {
+        text-align: center;
+    }
+</style>
+
+<br />
+<div>
+    <button type="button" onclick="window.location.href='@Url.Action("Index")'">Back to List</button>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
